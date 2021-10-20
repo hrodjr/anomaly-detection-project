@@ -6,40 +6,8 @@ import env
 from datetime import date
 
 ##########ACQUIRE########################
-#This dataset is pulled from this repo. It was queried using the listed function in the description.
-def get_data():
-    df = pd.read_csv('log_data.csv')
-    return df
 
-'''
-#db access
-def get_connection(db, user=env.user, host=env.host, password=env.password):
-    return f'mysql+pymysql://{user}:{password}@{host}/{db}'
 
-#function that accesses db server and querries logs and cohorts tables from the curriculm_logs db.
-#curriculum_logs db
-log_sql = "SELECT *\
-              FROM logs\
-              LEFT JOIN cohorts ON logs.cohort_id = cohorts.id;"
-
-#grabs dataset from get_connection function above and formats it into a pandas dataframe.
-#acquires curriculum_logs dataset
-def get_log_data():
-    return pd.read_sql(log_sql,get_connection('curriculum_logs'))
-
-#create a dictionary with the class types to append to the df by 'program id'.
-class_type_dict = {'id':[1, 2, 3, 4],
-        'Name':['PHP Full Stack Web Development', 
-                'Java Full Stack Web Development', 
-                'Data Science', 
-                'Front End Web Development'],
-        'subdomain':['php','java','ds','fe']}
-class_type = pd.DataFrame(class_type_dict)
-print (class_type)
-
-#merges df and class_type datasets
-df = df.merge(class_type, how='left', left_on='program_id', right_on='id')
-'''
 
 ##########PREPARE########################
 
